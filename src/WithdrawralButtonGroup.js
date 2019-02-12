@@ -1,12 +1,17 @@
 import React from "react";
 import formatNumber from "format-number";
 import { store } from './store';
-import { withdrawFunds } from './actions';
+import { withdrawFunds, insufficientFunds } from './actions';
 
 function dispatchBtnAction(e) {
     const amount = e.target.dataset.amount;
-    store.dispatch(withdrawFunds(amount));
-  }
+    if (store.getState().amount >= amount) {
+        store.dispatch(withdrawFunds(amount));
+    } else {
+        store.dispatch(insufficientFunds(amount));
+        alert('Insufficient Funds. Please deposit more funds.')
+    }
+}
 
 const WithdrawralButtonGroup = ({ amounts }) => (
     <div>

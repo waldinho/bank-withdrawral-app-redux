@@ -6,7 +6,6 @@ import { depositFunds } from './actions';
 function dispatchBtnAction(e) {
     const amount = e.target.dataset.amount;
     store.dispatch(depositFunds(amount));
-    console.log('here')
   }
 
 const DepositButtonGroup = ({ amounts }) => (

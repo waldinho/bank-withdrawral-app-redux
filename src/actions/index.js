@@ -11,3 +11,10 @@ export const depositFunds = amount => (
         amount: amount,
     }
 )
+
+export const insufficientFunds = amount => (
+    {
+        type: "INSUFFICIENT_FUNDS",
+        amount: amount,
+    }
+)
