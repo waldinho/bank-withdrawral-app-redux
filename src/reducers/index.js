@@ -3,7 +3,12 @@ export default (state, action) => {
       case "WITHDRAW_FUNDS":
         return {
           ...state,
-          amount: state.amount - action.amount
+          amount: state.amount - parseInt(action.amount, 0)
+        };
+      case "DEPOSIT_FUNDS":
+        return {
+          ...state,
+          amount: state.amount + parseInt(action.amount, 0)
         };
       default:
         return state;

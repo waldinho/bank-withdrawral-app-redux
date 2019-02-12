@@ -4,3 +4,10 @@ export const withdrawFunds = amount => (
         amount: amount,
     }
 )
+
+export const depositFunds = amount => (
+    {
+        type: "DEPOSIT_FUNDS",
+        amount: amount,
+    }
+)

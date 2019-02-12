@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import formatNumber from "format-number";
 import photographer from "./images/me.png";
 import "./App.css";
-import ButtonGroup from "./ButtonGroup";
+import WithdrawralButtonGroup from "./WithdrawralButtonGroup";
+import DepositButtonGroup from "./DepositButtonGroup";
 import { store } from "./store";
 
 class App extends Component {
   render() {
-    console.log(store.getState().amount)
     return (
       <div className="App">
         <img className="App__userpic" src={photographer} alt="user" />
@@ -18,7 +18,8 @@ class App extends Component {
         </div>
 
         <section className="App__buttons">
-        <ButtonGroup key={2} amounts={[1000000, 500000, 100000, 50000, 10000, 5000]} />
+        <WithdrawralButtonGroup key={1} amounts={[1000, 500, 200, 100, 50, 20, 10]} />
+        <DepositButtonGroup key={2} amounts={[1000, 500, 200, 100, 50, 20, 10]} />
         </section>
 
         <p className="App__giveaway">Give away all your cash to charity</p>
