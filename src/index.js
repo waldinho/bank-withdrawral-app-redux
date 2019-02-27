@@ -10,6 +10,6 @@ const render = () => ReactDOM.render(<App />,
  
 store.subscribe(render)
 
-store.subscribe(()=>{
-    localStorage.setItem('reduxState', JSON.stringify(store.getState()))
-  })
+store.subscribe(()=>{ 
+    localStorage.setItem('reduxState', JSON.stringify(store.getState())) 
+})
